@@ -21,23 +21,22 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: transparent;
 }
 .time { 
   font-family: 'Caveat', cursive; 
-  font-size: clamp(60px, 18vw, 200px); 
+  font-size: 20vw;
   line-height: 1; 
   color: #705747; 
 }
 .seconds { 
-  font-size: clamp(30px, 8vw, 100px); 
+  font-size: 10vw;
   color: #F3A2C5; 
   margin-left: 4px; 
 }
 .date { 
   margin-top: 6px; 
   font-family: 'Special Elite', monospace; 
-  font-size: clamp(12px, 3vw, 24px); 
+  font-size: 4vw;
   color: #9A8476; 
   letter-spacing: 1px; 
 }
@@ -54,4 +53,14 @@ html, body {
 const days = ["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"];
 const months = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
 function updateClock() {
-  con
+  const now = new Date();
+  document.getElementById("hours").textContent = String(now.getHours()).padStart(2,"0");
+  document.getElementById("minutes").textContent = String(now.getMinutes()).padStart(2,"0");
+  document.getElementById("seconds").textContent = String(now.getSeconds()).padStart(2,"0");
+  document.getElementById("date").textContent = `${days[now.getDay()]} ${now.getDate()} ${months[now.getMonth()]}`;
+}
+updateClock();
+setInterval(updateClock, 1000);
+</script>
+</body>
+</html>
