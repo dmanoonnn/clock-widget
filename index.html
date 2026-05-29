@@ -15,19 +15,32 @@ html, body {
   justify-content: center;
 }
 .clock-widget {
-  width: 90%;
-  max-width: 300px;
-  background: transparent;
-  border: none;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  background: transparent;
 }
-.time { font-family: 'Caveat', cursive; font-size: clamp(40px, 12vw, 74px); line-height: 1; color: #705747; }
-.seconds { font-size: clamp(20px, 6vw, 34px); color: #F3A2C5; margin-left: 4px; }
-.date { margin-top: 8px; font-family: 'Special Elite', monospace; font-size: clamp(10px, 2.5vw, 14px); color: #9A8476; letter-spacing: 1px; }
+.time { 
+  font-family: 'Caveat', cursive; 
+  font-size: clamp(60px, 18vw, 200px); 
+  line-height: 1; 
+  color: #705747; 
+}
+.seconds { 
+  font-size: clamp(30px, 8vw, 100px); 
+  color: #F3A2C5; 
+  margin-left: 4px; 
+}
+.date { 
+  margin-top: 6px; 
+  font-family: 'Special Elite', monospace; 
+  font-size: clamp(12px, 3vw, 24px); 
+  color: #9A8476; 
+  letter-spacing: 1px; 
+}
 </style>
 </head>
 <body>
@@ -41,14 +54,4 @@ html, body {
 const days = ["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"];
 const months = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
 function updateClock() {
-  const now = new Date();
-  document.getElementById("hours").textContent = String(now.getHours()).padStart(2,"0");
-  document.getElementById("minutes").textContent = String(now.getMinutes()).padStart(2,"0");
-  document.getElementById("seconds").textContent = String(now.getSeconds()).padStart(2,"0");
-  document.getElementById("date").textContent = `${days[now.getDay()]} ${now.getDate()} ${months[now.getMonth()]}`;
-}
-updateClock();
-setInterval(updateClock, 1000);
-</script>
-</body>
-</html>
+  con
