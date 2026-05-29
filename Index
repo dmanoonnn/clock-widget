@@ -17,27 +17,14 @@ html, body {
 .clock-widget {
   width: 90%;
   max-width: 300px;
-  background: #FFFAF5;
-  border: 1.5px solid #E8D8CC;
-  border-radius: 28px;
-  position: relative;
+  background: transparent;
+  border: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  padding: 10px;
 }
-.clock-widget::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(210,190,170,0.15) 1px, transparent 1px);
-  background-size: 14px 14px;
-  pointer-events: none;
-}
-.sticker { position: absolute; top: 12px; right: 14px; font-size: 18px; opacity: 0.18; }
 .time { font-family: 'Caveat', cursive; font-size: clamp(40px, 12vw, 74px); line-height: 1; color: #705747; }
 .seconds { font-size: clamp(20px, 6vw, 34px); color: #F3A2C5; margin-left: 4px; }
 .date { margin-top: 8px; font-family: 'Special Elite', monospace; font-size: clamp(10px, 2.5vw, 14px); color: #9A8476; letter-spacing: 1px; }
@@ -45,7 +32,6 @@ html, body {
 </head>
 <body>
 <div class="clock-widget">
-  <div class="sticker">🕰️</div>
   <div class="time">
     <span id="hours"></span>:<span id="minutes"></span><span class="seconds" id="seconds"></span>
   </div>
